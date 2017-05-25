@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Scripts/angular-1.6.4/angular.min.js"></script>
+<script src="Scripts/angular-1.6.4/angular-animate.js"></script>
+<script src="Scripts/myscript.js"></script>
+<script src="Scripts/customServices.js"></script>
+<meta charset="ISO-8859-1">
+<title>Custom Service</title>
+</head>
+<body data-ng-app="myCustomModule">
+<div data-ng-controller="myCustomCtrl">
+	<table>
+	<tr>
+		<td>Your String</td>
+		<td><input type="text" data-ng-model="input"/></td>
+	</tr>
+	<tr>
+		<td>Result</td>
+		<td><input type="text" data-ng-model="output"/></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<input type="button" data-ng-click="transformString(input)" value="Process String" />
+		</td>
+	</tr>	
+	</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Scripts/angular-1.6.4/angular.min.js"></script>
+<script src="Scripts/angular-1.6.4/angular-animate.js"></script>
+<script src="Scripts/angular-bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="Scripts/myscript.js"></script>
+<link rel="stylesheet" href="Style/my.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+<div data-ng-app="myIndex" data-ng-controller="myIndexController">
+
+<div align="left">Rows to display:<input type="number" step="1" min="0" max="{{indexValues.length}}" data-ng-model="rowLimit" /><br>
+Filter By:<input type="text" data-ng-model="dataFilter" /><br>
+<hr></div>
+<div align="center"><table border = '1' style="separate;border-spacing:0"><thead><tr><th>Sr. No.</th><th data-ng-click="myOrderSelect('indexTopic')">Topic/Chapter<div data-ng-class="getSortClass('indexTopic')"></div></th><th>Link Page</th><th data-ng-click="myOrderSelect('dateHit')">Date<div data-ng-class="getSortClass('dateHit')"></div></th><th data-ng-click="myOrderSelect('numberIn')">Number<div data-ng-class="getSortClass('numberIn')"></div></th><th>Currency</th><th data-ng-click="myOrderSelect('hit')">Hit Count<div data-ng-class="getSortClass('hit')"></div></th><th>Hit/Reduce</th></tr></thead>
+	<tbody>
+		<tr data-ng-repeat="value in indexValues | limitTo:rowLimit | orderBy:sortColumn:reverseSort | filter:dataFilter">
+			<td>{{$index+1}}</td>
+			<td>{{value.indexTopic | lowercase}}</td>
+			<td><a href="./{{value.indexHtmlName}}">{{value.indexTopic | uppercase}}</a></td>
+			<td>{{value.dateHit | date:"dd-MMM-yyyy"}}</td>
+			<td>{{value.numberIn | number:0}}</td>
+			<td><i class="fa fa-inr"></i> {{value.numberIn | currency:"":2}}</td>
+			<td>{{value.hit}}</td>
+			<td>
+			<input type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" value="Hit" data-ng-click="hitIncrease(value)">
+			<input type="button"  value="Free-Hit" data-ng-click="hitDecrease(value)">
+			</td>
+		</tr>
+	</tbody>
+</table></div>
+</div>
+</body>
+</html>

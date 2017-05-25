@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="Scripts/angular-1.6.4/angular.min.js"></script>
+<script src="Scripts/myscript.js"></script>
+<script src="Scripts/Filters.js"></script>
+<meta charset="ISO-8859-1">
+<title>Custom Filter</title>
+</head>
+<body>
+<div data-ng-app="myAppModule" data-ng-controller="myFilterController" style="align:center">
+  
+  <table>
+  <tr><td>
+  <input type="checkbox" data-ng-model="hideCity"/>
+  </td><th> Hide City
+  </th>
+  </tr>
+  </table><br>
+  <table border = '1' style="separate;border-spacing:0">
+     <thead>
+     	<tr>
+     		<th>Name</th>
+     		<th>Gender</th>
+     		<th data-ng-hide="hideCity">City</th>
+     	</tr>
+     </thead>
+     <tbody>
+     	<tr data-ng-repeat="employee in employees">
+     		<td>{{employee.name}}</td>
+     		<td>{{employee.gender | genderName}}</td>
+     		<td data-ng-show="!hideCity">{{employee.city}}</td>
+     	</tr>
+     </tbody>
+  </table>
+</div>
+</body>
+</html>
