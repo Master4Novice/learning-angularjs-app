@@ -2,7 +2,7 @@
 ///<reference path="angular-1.6.4/angular-animate.js" />
 ///<reference path="angular-bootstrap/ui-bootstrap-tpls-2.5.0.js" />
 
-var myApp = angular.module("myModule",[]);
+var myApp = angular.module("myModule",['ui.bootstrap']);
 myApp.controller("myController",function($scope)
 {
 	var employee = {
@@ -13,8 +13,14 @@ myApp.controller("myController",function($scope)
 	
 	$scope.employee=employee;
 });
-
-var myIndex = angular.module("myIndex",["ui.bootstrap"]).controller("myIndexController",function($scope)
+var myIndex = angular.module("myIndex",['ui.bootstrap','ngRoute'])
+              .config(function($routeProvider) {
+                   $routeProvider
+                   .when("/One, {
+                       templateUrl : "One.html"
+                   });
+                   })
+              .controller("myIndexController",function($scope)
 		{  var indexValues = [
 			{indexTopic:'One',indexHtmlName:'One.html',hit:0,dateHit: new Date("November 19, 1990"), numberIn:50.01},
 			{indexTopic:'Two',indexHtmlName:'Two.html',hit:0,dateHit: new Date("November 30, 1991"), numberIn:51.10},
@@ -57,7 +63,7 @@ var myIndex = angular.module("myIndex",["ui.bootstrap"]).controller("myIndexCont
 		    }
 });
 
-var myAppFilter = angular.module("myAppModule",[]).controller("myFilterController",function($scope)
+var myAppFilter = angular.module("myAppModule",['ui.bootstrap']).controller("myFilterController",function($scope)
 		{
 	         var employees = [
 	        	 {name:'Mikky',gender:1,city:'Mc-Donald'},
@@ -69,7 +75,7 @@ var myAppFilter = angular.module("myAppModule",[]).controller("myFilterControlle
 	         
 	         $scope.employees = employees;
 		});
-var appShopping = angular.module("myShoppingList", []).controller("myShoppingCtrl",function($scope)
+var appShopping = angular.module("myShoppingList", ['ui.bootstrap']).controller("myShoppingCtrl",function($scope)
 		{
 	       $scope.products = ["Milk","Bread","Cheese"];
 	       $scope.addItem = function(){
@@ -89,7 +95,7 @@ var appShopping = angular.module("myShoppingList", []).controller("myShoppingCtr
 	       }
 		});
 var myCustomApp = angular
-				  .module("myCustomModule",[])
+				  .module("myCustomModule",['ui.bootstrap'])
 				  .controller("myCustomCtrl",function($scope,stringService){
 					  $scope.transformString = function(input){ 
 						  $scope.output = stringService.processString(input);
