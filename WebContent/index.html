@@ -5,7 +5,7 @@
 <script src="Scripts/angular-1.6.4/angular.min.js"></script>
 <script src="Scripts/angular-1.6.4/angular-animate.js"></script>
 <script src="Scripts/angular-1.6.4/angular-route.js"></script>
-<script src="Scripts/angular-bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="Scripts/angular-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <script src="Scripts/myscript.js"></script>
 <link rel="stylesheet" href="Style/my.css">
 <link rel="stylesheet"
@@ -19,12 +19,92 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>	
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home</title>
+<title>Learn Angular JS - Bootstrap UI</title>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<!-- <div class="container">
+		<form>
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav nav-pills nav-justified">
+						<li class="active"><a href="#"><span class="fa fa-home"></span>HOME</a></li>
+						<li><a href="#"><span class="fa fa-phone">CONTACT</a></li>
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"><span class="fa fa-info-circle">ABOUT
+									<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Mission</a></li>
+								<li><a href="#">Vision</a></li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</div> -->
+	<!-- <nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle"
+				data-target=".navbar-collapse" data-toggle="collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Products</a></li>
+			</ul>
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search" />
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Subscribe</a></li>
+			</ul>
+		</div>
+	</nav> -->
+	<!-- <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle"
+					data-target=".navbar-collapse" data-toggle="collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Products</a></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search" />
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Subscribe</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+	</nav> -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Learning AngularJS</a>
@@ -48,13 +128,15 @@
 						class="fa fa-github" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
-	</nav>
+	</nav><br/>
+	<hr><br/>
+	<div class="container"><div class="row">
 	<section class="container-fluid" id="section1">
-		<div class="col-sm-8 col-sm-offset-2 text-center">
+		<div class="col-md-12 text-center">
 			<div class="container-fluid text-center" data-ng-app="myIndex"
 				data-ng-controller="myIndexController">
 				<div class="row content">
-					<div class="col-sm-2 sidenav input-sm">
+					<div class="col-md-2 sidenav input-sm">
 						<div align="center">
 							<div class="input-group col-xs-8">
 								<div class="input-group-btn">
@@ -68,27 +150,34 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-sm-8 text-left md-whiteframe-1dp">
-						<div align="center">
-							<table class="table table-hover">
+					<div class="col-md-8 text-left md-whiteframe-1dp">
+						
+
+						<div class="table-responsive">
+							<table
+								class="table table-striped table-bordered table-hover table-condensed">
 								<thead>
-									<tr>
-										<th>Sr. No.</th>
-										<th data-ng-click="myOrderSelect('indexTopic')">Topic/Chapter
+									<tr class="active">
+										<th class="text-center">Sr. No.</th>
+										<th class="text-center"
+											data-ng-click="myOrderSelect('indexTopic')">Topic/Chapter
 											<div data-ng-class="getSortClass('indexTopic')"></div>
 										</th>
-										<th>Link Page</th>
-										<th data-ng-click="myOrderSelect('dateHit')">Date
+										<th class="text-center">Link Page</th>
+										<th class="text-center"
+											data-ng-click="myOrderSelect('dateHit')">Date
 											<div data-ng-class="getSortClass('dateHit')"></div>
 										</th>
-										<th data-ng-click="myOrderSelect('numberIn')">Number
+										<th class="text-center"
+											data-ng-click="myOrderSelect('numberIn')">Number
 											<div data-ng-class="getSortClass('numberIn')"></div>
 										</th>
-										<th>Currency</th>
-										<th data-ng-click="myOrderSelect('hit')">Hit Count
+										<th class="text-center">Currency</th>
+										<th class="text-center" data-ng-click="myOrderSelect('hit')">Hit
+											Count
 											<div data-ng-class="getSortClass('hit')"></div>
 										</th>
-										<th>Hit/Reduce</th>
+										<th class="text-center">Hit/Reduce</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -96,23 +185,23 @@
 										data-ng-repeat="value in indexValues | limitTo:rowLimit | orderBy:sortColumn:reverseSort | filter:dataFilter">
 										<td>{{$index+1}}</td>
 										<td>{{value.indexTopic | lowercase}}</td>
-										<td><a href="{{value.indexHtmlName}}">{{value.indexTopic | uppercase}}</a></td>
+										<td><a href="#{{value.indexHtmlName}}">{{value.indexTopic
+												| uppercase}}</a></td>
 										<td>{{value.dateHit | date:"dd-MMM-yyyy"}}</td>
 										<td>{{value.numberIn | number:0}}</td>
-										<td><i class="fa fa-inr"></i> {{value.numberIn |
+										<td><i class="fa fa-inr heart"></i> {{value.numberIn |
 											currency:"":2}}</td>
 										<td>{{value.hit}}</td>
 										<td>
-											<div class="input-group-btn">
+											<div class="input-group input-group-btn">
 												<button class="btn btn-success" type="submit"
 													ng-model="singleModel" data-ng-click="hitIncrease(value)"
-													title="Hit Increase">
+													title="Hit Increase" data-toggle="tooltip">
 													<i class="fa fa-arrow-up" aria-hidden="true"></i>
 												</button>
 												<button class="btn btn-danger" type="submit"
-													data-ng-click="hitDecrease(value)">
-													<i class="fa fa-arrow-down" aria-hidden="true"
-														title="Hit Decrease"></i>
+													data-ng-click="hitDecrease(value)" title="Hit Decrease">
+													<i class="fa fa-arrow-down" aria-hidden="true"></i>
 												</button>
 											</div>
 										</td>
@@ -121,11 +210,11 @@
 							</table>
 						</div>
 					</div>
-					<div class="col-sm-2 sidenav">
+					<div class="col-md-2 sidenav">
 						<div align="center">
 							<div class="input-group col-xs-8">
 								<div class="input-group-btn">
-									<button class="btn btn-sm btn-info" type="submit">
+									<button class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="bottom" type="submit" title="Filter">
 										<i class="fa fa-filter" aria-hidden="true"></i>
 									</button>
 								</div>
@@ -137,25 +226,131 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section></div>
+	<hr>
+	<div class="row">
 	<section class="container-fluid" id="section2">
-		<h2 class="text-center">Learning Angular JS</h2>
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-             		
+			<div class="col-md-8 col-md-offset-2">
+			
+			<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">Angular 2 (JS) With
+									Bootstrap 4</h3>
+							</div>
+							<div class="panel-body">
+								<div class="container">
+									<div class="row text-primary text-left">Angular 2</div>
+								</div>
+							</div>
+
+
+							<div class="panel-footer text-info text-right">
+								With <i class="fa fa-heart heart"></i>&nbsp;By Abhinav
+							</div>
+						</div>
 			</div>
 		</div>
 	</section>
+    </div>
+    <div class="row">
+	<section class="container-fluid" id="One">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+			
+			<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">Angular 2 (JS) First Example</h3>
+							</div>
+							<div class="panel-body">
+								<div class="container">
+									<div class="row text-primary text-left">Angular 2</div>
+								</div>
+							</div>
 
-    <div data-ng-app="myIndex" data-ng-controller="myIndexController" ng-view></div>	
-	<div class="footer">
-		<div class="container">
-			<span class="text-muted"> <i class="fa fa-copyright"
-				aria-hidden="true"></i> Made with <i class="fa fa-heart"
-				aria-hidden="true" style="color: red;"></i> by Abhinav
-			</span>
+
+							<div class="panel-footer text-info text-right">
+								With <i class="fa fa-heart heart"></i>&nbsp;By Abhinav
+							</div>
+						</div>
+			</div>
 		</div>
-	</div>
+	</section>
+	<section class="container-fluid" id="Two">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+			
+			<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">Angular 2 (JS) Second Example</h3>
+							</div>
+							<div class="panel-body">
+								<div class="container">
+									<div class="row text-primary text-left">Angular 2</div>
+								</div>
+							</div>
+
+
+							<div class="panel-footer text-info text-right">
+								With <i class="fa fa-heart heart"></i>&nbsp;By Abhinav
+							</div>
+						</div>
+			</div>
+		</div>
+	</section>
+	<section class="container-fluid" id="Three">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+			
+			<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">Angular 2 (JS) Third Example</h3>
+							</div>
+							<div class="panel-body">
+								<div class="container">
+									<div class="row text-primary text-left">Angular 2</div>
+								</div>
+							</div>
+
+
+							<div class="panel-footer text-info text-right">
+								With <i class="fa fa-heart heart"></i>&nbsp;By Abhinav
+							</div>
+						</div>
+			</div>
+		</div>
+	</section>
+	<section class="container-fluid" id="Four">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+			
+			<div class="panel panel-primary">
+							<div class="panel-heading">
+								<h3 class="panel-title text-center">Angular 2 (JS) Fourth Example</h3>
+							</div>
+							<div class="panel-body">
+								<div class="container">
+									<div class="row text-primary text-left">Angular 2</div>
+								</div>
+							</div>
+
+
+							<div class="panel-footer text-info text-right">
+								With <i class="fa fa-heart heart"></i>&nbsp;By Abhinav
+							</div>
+						</div>
+			</div>
+		</div>
+	</section>
+    </div>
+    </div>
+	<footer class="navbar-default navbar-inverse navbar-fixed-bottom">
+		<div class="container container-fluid">
+			<div class="text-center"><span class="text-muted"> <i class="fa fa-copyright"></i> Made
+				with <i class="fa fa-heart heart"></i> by Abhinav
+			</span></div>
+		</div>
+	</footer>
 </body>
 </html>
 

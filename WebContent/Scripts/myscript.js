@@ -14,24 +14,18 @@ myApp.controller("myController",function($scope)
 	$scope.employee=employee;
 });
 var myIndex = angular.module("myIndex",['ui.bootstrap','ngRoute'])
-              .config(function($routeProvider) {
-                   $routeProvider
-                   .when("/One, {
-                       templateUrl : "One.html"
-                   });
-                   })
-              .controller("myIndexController",function($scope)
+                     .controller("myIndexController",function($scope)
 		{  var indexValues = [
-			{indexTopic:'One',indexHtmlName:'One.html',hit:0,dateHit: new Date("November 19, 1990"), numberIn:50.01},
-			{indexTopic:'Two',indexHtmlName:'Two.html',hit:0,dateHit: new Date("November 30, 1991"), numberIn:51.10},
-			{indexTopic:'Three',indexHtmlName:'Three.html',hit:0,dateHit: new Date("May 4, 1984"), numberIn:52.22},
-			{indexTopic:'Two way DataBinding',indexHtmlName:'Four.html',hit:0,dateHit: new Date("May 10, 1980"), numberIn:53.63},
-			{indexTopic:'Color Change',indexHtmlName:'Five.html',hit:0,dateHit: new Date("February 4, 2012"), numberIn:54.0091},
-			{indexTopic:'Repeat',indexHtmlName:'Six.html',hit:0,dateHit: new Date("February 5, 2017"), numberIn:55.005},	
-			{indexTopic:'Custom Filter',indexHtmlName:'Seven.html',hit:0,dateHit: new Date("May 4, 2017"), numberIn:56.076}	,
-			{indexTopic:'Form',indexHtmlName:'Form.html',hit:0,dateHit: new Date("May 8, 2017"), numberIn:57.071},
-			{indexTopic:'Shopping List',indexHtmlName:'myShopping.html',hit:0,dateHit: new Date("May 8, 2017"), numberIn:58.056},
-			{indexTopic:'Custom Services',indexHtmlName:'myCustomService.html',hit:0,dateHit: new Date("May 8, 2017"), numberIn:59.056}	
+			{indexTopic:'One',indexHtmlName:'One',hit:0,dateHit: new Date("November 19, 1990"), numberIn:50.01},
+			{indexTopic:'Two',indexHtmlName:'Two',hit:0,dateHit: new Date("November 30, 1991"), numberIn:51.10},
+			{indexTopic:'Three',indexHtmlName:'Three',hit:0,dateHit: new Date("May 4, 1984"), numberIn:52.22},
+			{indexTopic:'Two way DataBinding',indexHtmlName:'Four',hit:0,dateHit: new Date("May 10, 1980"), numberIn:53.63},
+			{indexTopic:'Color Change',indexHtmlName:'Five',hit:0,dateHit: new Date("February 4, 2012"), numberIn:54.0091},
+			{indexTopic:'Repeat',indexHtmlName:'Six',hit:0,dateHit: new Date("February 5, 2017"), numberIn:55.005},	
+			{indexTopic:'Custom Filter',indexHtmlName:'Seven',hit:0,dateHit: new Date("May 4, 2017"), numberIn:56.076}	,
+			{indexTopic:'Form',indexHtmlName:'Form',hit:0,dateHit: new Date("May 8, 2017"), numberIn:57.071},
+			{indexTopic:'Shopping List',indexHtmlName:'myShopping',hit:0,dateHit: new Date("May 8, 2017"), numberIn:58.056},
+			{indexTopic:'Custom Services',indexHtmlName:'myCustomService',hit:0,dateHit: new Date("May 8, 2017"), numberIn:59.056}	
 		]
 			$scope.indexValues = indexValues;
 		
